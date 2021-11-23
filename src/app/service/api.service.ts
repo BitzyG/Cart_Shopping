@@ -10,7 +10,9 @@ import { Observable } from 'rxjs';
 })
 export class ApiService {
 
-  private localUrl = 'https://fakestoreapi.com/auth/login';
+  private loginUrl = 'https://fakestoreapi.com/auth/login';
+  private productsUrl = 'https://fakestoreapi.com/products';
+
 
   constructor(private http: HttpClient) { }
 
@@ -23,9 +25,19 @@ export class ApiService {
   //     this.localUrl, { observe: 'response' });
   // }
   loginUser(user:any){
-    return this.http.post(this.localUrl, {
+    return this.http.post(this.loginUrl, {
       username: user.user,
       password: user.password
     });
   }
+
+  // getProducts(){
+  //   return this.http.get('https://fakestoreapi.com/products')
+  // }
+
+  getProducts() : Observable<HttpResponse<any>> {
+    return this.http.get(
+      this.productsUrl, { observe: 'response' });
+  }
+
 }
