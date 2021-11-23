@@ -11,23 +11,23 @@
 <section class="row mx-auto container mt-2 mb-2">
   <section class="col-sm-8 mx-auto d-block">
 
-    <form class="col form-group custom-form">
+    <form class="col form-group custom-form" [formGroup]="logInForm" (ngSubmit)="login(); aVer()">
       <div class="form-group">
         <label for="exampleInputEmail1" class="text fs-5">Usuario</label>
         <input type="email" class="form-control mb-3 border border-secondary rounded-pill borderInput" autocomplete="on"
-          id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingresa tu usuario" ><!--[(ngModel)]="user.email"
+          id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingresa tu usuario" formControlName="user"><!--[(ngModel)]="user.email"
           name="email" -->
       </div>
       <div class="form-group">
         <label for="exampleInputPassword1" class="fs-5 text">Contraseña</label>
         <input type="password" class="form-control mb-3 border border-secondary rounded-pill borderInput"
-          autocomplete="off" id="exampleInputPassword1" placeholder="Ingresa tu contraseña" ><!--[(ngModel)]="user.password"
+          autocomplete="off" id="exampleInputPassword1" placeholder="Ingresa tu contraseña" formControlName="password"><!--[(ngModel)]="user.password"
           name="password"-->
       </div>
 
       <section class="col mt-3">
         <div class="mx-auto d-block text-center mb-3">
-          <button type="button" class="btn btn-primary fs-5 text" style="width: 50%" routerLink="/home">Iniciar Sesión</button> <!-- (click)="LogIn()"-->
+          <button type="submit" class="btn btn-primary fs-5 text" style="width: 50%">Iniciar Sesión</button> <!-- routerLink="/home" (click)="LogIn()"-->
           <!-- routerLink="/home" -->
         </div>
         <!-- <div class="mx-auto d-block text-center mb-3 ">
