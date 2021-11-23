@@ -1,0 +1,83 @@
+<!-- <p>login works!</p> -->
+<section class="mt-3">
+  <p class="welcome text-center">Bienvenido</p>
+  <figure>
+    <img src="../../../assets/imagelogin.png" alt="Icon logo" class="logo-home mx-auto d-block">
+  </figure>
+</section>
+
+<!-- <h2 class="text-center fs-1"> Bitzy Notes</h2> -->
+
+<section class="row mx-auto container mt-2 mb-2">
+  <section class="col-sm-8 mx-auto d-block">
+
+    <form class="col form-group custom-form">
+      <div class="form-group">
+        <label for="exampleInputEmail1" class="text fs-5">Usuario</label>
+        <input type="email" class="form-control mb-3 border border-secondary rounded-pill borderInput" autocomplete="on"
+          id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingresa tu email" ><!--[(ngModel)]="user.email"
+          name="email" -->
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1" class="fs-5 text">Contraseña</label>
+        <input type="password" class="form-control mb-3 border border-secondary rounded-pill borderInput"
+          autocomplete="off" id="exampleInputPassword1" placeholder="Ingresa tu contraseña" ><!--[(ngModel)]="user.password"
+          name="password"-->
+      </div>
+
+      <section class="col mt-3">
+        <div class="mx-auto d-block text-center mb-3">
+          <button type="button" class="btn btn-primary fs-5" style="width: 50%">Iniciar Sesión</button> <!-- (click)="LogIn()"-->
+          <!-- routerLink="/home" -->
+        </div>
+        <!-- <div class="mx-auto d-block text-center mb-3 ">
+          <button type="button" class="btn btn-primary btnGoogle" style="width: 50%" >Sign in with Google</button>
+        </div> -->
+        <div class="mx-auto d-block text-center">
+          <span>¿No tienes?<a href="#/register" id="linkRegister" class="link mx-auto d-block col-sm-6 fs-5"
+              routerLink="/SignUp">¡Regístrate ahora!</a></span>
+        </div>
+      </section>
+
+      <!-- <section>
+        <div class="mx-auto d-block text-center mb-3">
+          <button type="button" class="btn btn-primary" style="width: 50%" data-toggle="modal"
+            data-target="#basicModal">Login with SMS</button>
+        </div>
+      </section> -->
+    </form>
+
+    <!-- <section class="mx-auto d-block text-center">
+      <div class="modal fade mt-5" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content mt-5 col-sm-6" style="width: 500px;">
+            <div class="modal-header bg-light justify-content-between">
+              <div class="md-form text-dark">
+                <label for="formPhone" class="text fs-5 col-sm-6 text-center" style="width: 100%">Please insert phone number and validation code:</label>
+              </div>
+              <div>
+                <button type="button" class="btn btn-danger col-sm-6 text-center text" data-dismiss="modal" style="width: 10%">X</button>
+              </div>
+            </div>
+            <div class="modal-body text-dark">
+              <div class="md-form text-dark row align-items-center">
+                <label for="formPhone" class="text fs-5 col-sm-6" style="width: 30%">Phone number:</label>
+                <input type="text" id="formPhone" class="form-control text-dark col-sm-6" style="width: 70%">
+              </div>
+              <div class="md-form text-dark row align-items-center">
+                <label for="formCode" class="text fs-5 col-sm-6" style="width: 30%">Validation code:</label>
+                <input type="text" id="formCode" class="form-control text-dark col-sm-6 mt-1" style="width: 70%">
+              </div>
+            </div>
+            <div class="modal-footer row">
+              <button type="button" class="btn btn-primary col-sm-6" data-dismiss="modal" style="width: 30%">Send Code</button>
+              <button type="button" class="btn  btn-primary col-sm-6 btnGoogle" data-dismiss="modal" style="width: 30%" >Validate Code</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id='sign-in-button'> </div>
+    </section> -->
+
+  </section>
+</section>
