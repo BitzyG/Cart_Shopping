@@ -16,6 +16,7 @@ export class ApiService {
   private electronicsProducts = 'https://fakestoreapi.com/products/category/electronics';
   private mansProducts = "https://fakestoreapi.com/products/category/men's%20clothing";
   private womenProducts = "https://fakestoreapi.com/products/category/women's%20clothing";
+  private userCollection = 'https://fakestoreapi.com/users';
 
 
   constructor(private http: HttpClient) { }
@@ -63,6 +64,10 @@ export class ApiService {
     return this.http.get(
       this.womenProducts, { observe: 'response' });
   }
-// https://fakestoreapi.com/products/category/men's%20clothing
-// https://fakestoreapi.com/products/category/women's%20clothing
+
+  getUser() : Observable<HttpResponse<any>> {
+    return this.http.get(
+      this.userCollection, { observe: 'response' });
+  }
+
 }
