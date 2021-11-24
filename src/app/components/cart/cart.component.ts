@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { CartService } from 'src/app/service/cart.service';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
-
 
 @Component({
   selector: 'app-cart',

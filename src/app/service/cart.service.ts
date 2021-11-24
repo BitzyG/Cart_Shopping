@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +10,7 @@ export class CartService {
   productStorage:any;
   parseStorage: any;
 
-  constructor() { }
+  constructor(public router: Router) { }
 
   /****************Funciones*************** */
 
@@ -59,6 +60,7 @@ export class CartService {
   clearCart() {
     // this.itemCart = [];
     localStorage.removeItem('productStorage')
+    this.router.navigateByUrl('home');
     return this.itemCart;
   }
 
