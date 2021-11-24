@@ -1,7 +1,8 @@
-<div style="position: fixed" class="fixed-bottom text-center footer container">
-  <button type="button" class="col-auto btn"><i class="fas fa-home text-secondary fs-2"></i></button>
-  <button type="button" class="col-auto btn"><i class="fas fa-heart text-secondary fs-2"></i></button>
-  <button type="button" class="col-auto btn" [routerLink]="['/cart']"><i class="fas fa-shopping-cart text-secondary fs-2"></i></button> <!-- (click)="logOut()"  -->
-  <button type="button" class="col-auto btn"><i class="fas fa-user text-secondary fs-2"></i></button><!-- [routerLink]="['/profile']" -->
-  <button type="button" class="col-auto btn"><i class="fas fa-sign-out-alt text-secondary fs-2" (click)="logOut()"></i></button><!-- [routerLink]="['/profile']" -->
+<div style="position: fixed" class="fixed-top text-center footer container text-white"><!-- fixed-bottom -->
+  <button type="button" class="col-auto btn" [routerLink]="['/home']"><i class="fas fa-arrow-left text-white fs-2"></i></button><!-- [routerLink]="['/profile']" -->
+  <button type="button" class="col-auto btn" [routerLink]="['/home']"><i class="fas fa-home text-white fs-2"></i></button>
+  <!-- <button type="button" class="col-auto btn"><i class="fas fa-heart text-white fs-2"></i></button> -->
+  <button type="button" class="col-auto btn" [routerLink]="['/cart']"><i class="fas fa-shopping-cart text-white fs-2"></i></button> <!-- (click)="logOut()"  -->
+  <button type="button" class="col-auto btn"><i class="fas fa-sign-out-alt text-white fs-2" (click)="logOut()"></i></button><!-- [routerLink]="['/profile']" -->
+  <!-- <button type="button" class="col-auto btn" [routerLink]="['/home']"><i class="fas fa-arrow-left text-secondary fs-2 mt-5"></i></button> -->
 </div>

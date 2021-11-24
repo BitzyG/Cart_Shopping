@@ -9,6 +9,7 @@ import { CartService } from 'src/app/service/cart.service';
 })
 export class HomeComponent implements OnInit {
 
+  infoUser: any = [];
   products: any = [];
   cartProducts: any;
   itemsCart = this.cartService.getItems();
@@ -19,11 +20,12 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.getProducts();
     // this.getProductsJewels()
+    this.getUser();
   }
 
   getProducts() {
     this.api.getProducts().subscribe(resp => {
-      console.log(resp.body);
+      // console.log(resp.body);
       this.products= [];
       resp.body.forEach((element:any) => {
         this.products.push({
@@ -34,14 +36,13 @@ export class HomeComponent implements OnInit {
           image: element.image,
           price: element.price,
         })
-        console.log(this.products);
+        // console.log(this.products);
       })
     })
   }
 
   getProductsJewels() {
     this.api.getJewels().subscribe(resp => {
-      console.log(resp.body);
       this.products = [];
       resp.body.forEach((element:any) => {
         this.products.push({
@@ -58,7 +59,6 @@ export class HomeComponent implements OnInit {
 
   getProductsElectronics() {
     this.api.getElectronics().subscribe(resp => {
-      console.log(resp.body);
       this.products = [];
       resp.body.forEach((element:any) => {
         this.products.push({
@@ -75,7 +75,6 @@ export class HomeComponent implements OnInit {
 
   getMensClothing() {
     this.api.getMenClothing().subscribe(resp => {
-      console.log(resp.body);
       this.products = [];
       resp.body.forEach((element:any) => {
         this.products.push({
@@ -92,7 +91,6 @@ export class HomeComponent implements OnInit {
 
   getWomanClothing() {
     this.api.getWomanClothing().subscribe(resp => {
-      console.log(resp.body);
       this.products = [];
       resp.body.forEach((element:any) => {
         this.products.push({
@@ -122,5 +120,21 @@ export class HomeComponent implements OnInit {
     }
     console.log(product);
   }
+
+  getUser(){
+    this.api.getUser().subscribe(resp => {
+      console.log(resp.body);
+      this.infoUser = [];
+      resp.body.forEach((element:any) => {
+        this.products.push({
+          name: element.name,
+          username: element.username,
+          password: element.password,
+        })
+      })
+    })
+  }
+
+
 
 }
