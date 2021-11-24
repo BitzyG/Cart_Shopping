@@ -11,6 +11,10 @@ $font-secundary: 'Roboto', sans-serif
 *
   margin: 0
 
+.home
+  display: flex
+  flex-direction: column
+  align-items: center
 
 .welcome
   font-family: $font-main
@@ -23,11 +27,19 @@ $font-secundary: 'Roboto', sans-serif
   color: #BBB7B3
   font-size: 1.5rem
 
+.productsCollection
+  display: flex
+  justify-content: space-between
+  padding: 0.5rem
+  width: 100%
+  margin: 0
+
 .card
   margin: 2rem
   border-radius: 10px
   background-color: $coral
   color: #fff
+  width: 100%
 
 .btn
   color: $orange
@@ -43,13 +55,11 @@ $font-secundary: 'Roboto', sans-serif
   text-align: center
 
 .cardProduct
-  width: 200px
-  heigth: 500px
+  width: 220px
   background-color: $gray
   color: #000
   border-radius: 20px
   box-shadow: 10px 10px 20px #cbced1, -13px -13px 20px #ffffff
-
 
 .btnCard
   background-color: $coral
@@ -57,3 +67,4 @@ $font-secundary: 'Roboto', sans-serif
 
 .old-price
   text-decoration: line-through
+  text-decoration-color: red
