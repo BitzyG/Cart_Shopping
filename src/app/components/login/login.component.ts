@@ -38,27 +38,6 @@ export class LoginComponent implements OnInit {
     })
   }
 
-  aVer(){
-    console.log(this.logInForm.value);
-  }
-  // userLogin() {
-  //   this.api.userLogin()
-  //     .subscribe(resp => {
-  //       console.log(resp);
-  //       const keys = resp.headers.keys();
-  //       this.user = keys.map(key =>
-  //         `${key}: ${resp.headers.get(key)}`);
-        // for (const d of (data as any)) {
-          // this.user.push({
-            // username: d.name,
-        //     price: d.price
-          // });
-        // }
-  //     });
-  // }
-
-
-
   //               username: "mor_2314",
   //               password: "83r5^_"
 }

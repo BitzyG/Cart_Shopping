@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/service/api.service';
+import { CartService } from 'src/app/service/cart.service';
 
 @Component({
   selector: 'app-home',
@@ -9,10 +10,11 @@ import { ApiService } from 'src/app/service/api.service';
 export class HomeComponent implements OnInit {
 
   products: any = [];
-  // jewels: any = [];
-  // electronics: any = [];
+  cartProducts: any;
+  itemsCart = this.cartService.getItems();
 
-  constructor(private api: ApiService,) { }
+  constructor(private api: ApiService,
+              private cartService: CartService) { }
 
   ngOnInit(): void {
     this.getProducts();
@@ -53,7 +55,6 @@ export class HomeComponent implements OnInit {
       })
     })
   }
-
 
   getProductsElectronics() {
     this.api.getElectronics().subscribe(resp => {
@@ -104,6 +105,22 @@ export class HomeComponent implements OnInit {
         })
       })
     })
+  }
+
+  addToCart(product: any) {
+    // agrega producto al carrito si está vacio
+  if(this.itemsCart.length === 0) {
+    this.cartService.addToCart(product);
+  } else {
+      // agrega el producto si el id es diferente a los agregados
+    if(!this.itemsCart.find( (item: any) => item.id === product.id)) {
+      this.cartService.addToCart(product);
+      // si encuentra al id actualiza su cantidad
+    } else {
+      this.cartService.updateCart(product,'+');
+    }
+    }
+    console.log(product);
   }
 
 }
